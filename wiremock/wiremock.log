@@ -1,0 +1,119 @@
+2024-04-21 19:22:02.978 Verbose logging enabled
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2024-04-21 19:22:03.552 Verbose logging enabled
+ /$$      /$$ /$$                     /$$      /$$                     /$$      
+| $$  /$ | $$|__/                    | $$$    /$$$                    | $$      
+| $$ /$$$| $$ /$$  /$$$$$$   /$$$$$$ | $$$$  /$$$$  /$$$$$$   /$$$$$$$| $$   /$$
+| $$/$$ $$ $$| $$ /$$__  $$ /$$__  $$| $$ $$/$$ $$ /$$__  $$ /$$_____/| $$  /$$/
+| $$$$_  $$$$| $$| $$  \__/| $$$$$$$$| $$  $$$| $$| $$  \ $$| $$      | $$$$$$/ 
+| $$$/ \  $$$| $$| $$      | $$_____/| $$\  $ | $$| $$  | $$| $$      | $$_  $$ 
+| $$/   \  $$| $$| $$      |  $$$$$$$| $$ \/  | $$|  $$$$$$/|  $$$$$$$| $$ \  $$
+|__/     \__/|__/|__/       \_______/|__/     |__/ \______/  \_______/|__/  \__/
+
+port:                         8081
+enable-browser-proxying:      false
+no-request-journal:           false
+verbose:                      true
+
+2024-04-21 19:23:46.376 Request received:
+127.0.0.1 - GET /products
+
+User-Agent: [Java/17.0.10]
+Connection: [keep-alive]
+Host: [localhost:8081]
+Accept: [application/json, application/*+json]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "[{\"id\":\"Dwt5F7KAhi\",\"name\":\"Amazing Pizza!\",\"price\":1099},{\"id\":\"PWWe3w1SDU\",\"name\":\"Amazing Burger!\",\"price\":999},{\"id\":\"C8GDyLrHJb\",\"name\":\"Amazing Salad!\",\"price\":499},{\"id\":\"4MB7UfpTQs\",\"name\":\"Boring Fries!\",\"price\":199}]",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+
+[{"id":"Dwt5F7KAhi","name":"Amazing Pizza!","price":1099},{"id":"PWWe3w1SDU","name":"Amazing Burger!","price":999},{"id":"C8GDyLrHJb","name":"Amazing Salad!","price":499},{"id":"4MB7UfpTQs","name":"Boring Fries!","price":199}]
+
+2024-04-21 19:23:55.313 Request received:
+127.0.0.1 - GET /products/PWWe3w1SDU
+
+User-Agent: [Java/17.0.10]
+Connection: [keep-alive]
+Host: [localhost:8081]
+Accept: [application/json, application/*+json]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{\"id\":\"PWWe3w1SDU\",\"name\":\"Amazing Burger!\",\"price\":999,\"promotions\":[{\"id\":\"ZRAwbsO2qM\",\"type\":\"BUY_X_GET_Y_FREE\",\"required_qty\":2,\"free_qty\":1}]}",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+
+{"id":"PWWe3w1SDU","name":"Amazing Burger!","price":999,"promotions":[{"id":"ZRAwbsO2qM","type":"BUY_X_GET_Y_FREE","required_qty":2,"free_qty":1}]}
+
+2024-04-21 19:39:51.444 Request received:
+127.0.0.1 - GET /products
+
+User-Agent: [Java/17.0.10]
+Connection: [keep-alive]
+Host: [localhost:8081]
+Accept: [application/json, application/*+json]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "[{\"id\":\"Dwt5F7KAhi\",\"name\":\"Amazing Pizza!\",\"price\":1099},{\"id\":\"PWWe3w1SDU\",\"name\":\"Amazing Burger!\",\"price\":999},{\"id\":\"C8GDyLrHJb\",\"name\":\"Amazing Salad!\",\"price\":499},{\"id\":\"4MB7UfpTQs\",\"name\":\"Boring Fries!\",\"price\":199}]",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+
+[{"id":"Dwt5F7KAhi","name":"Amazing Pizza!","price":1099},{"id":"PWWe3w1SDU","name":"Amazing Burger!","price":999},{"id":"C8GDyLrHJb","name":"Amazing Salad!","price":499},{"id":"4MB7UfpTQs","name":"Boring Fries!","price":199}]
+
+2024-04-21 19:40:26.679 Request received:
+127.0.0.1 - GET /products/PWWe3w1SDU
+
+User-Agent: [Java/17.0.10]
+Connection: [keep-alive]
+Host: [localhost:8081]
+Accept: [application/json, application/*+json]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{\"id\":\"PWWe3w1SDU\",\"name\":\"Amazing Burger!\",\"price\":999,\"promotions\":[{\"id\":\"ZRAwbsO2qM\",\"type\":\"BUY_X_GET_Y_FREE\",\"required_qty\":2,\"free_qty\":1}]}",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+
+{"id":"PWWe3w1SDU","name":"Amazing Burger!","price":999,"promotions":[{"id":"ZRAwbsO2qM","type":"BUY_X_GET_Y_FREE","required_qty":2,"free_qty":1}]}
+
