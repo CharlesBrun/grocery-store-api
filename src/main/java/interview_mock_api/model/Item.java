@@ -11,18 +11,18 @@ public class Item {
     @ApiModelProperty(hidden = true)
     private String id;
     private String name;
-    private int price;
+    private Double price;
     private List<Promotions> promotions;
 
     public Item() {}
-    public Item(String id, String name, int price, List<Promotions> promotions) {
+    public Item(String id, String name, Double price, List<Promotions> promotions) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.promotions = promotions;
     }
 
-    public Item(String name, int price, List<Promotions> promotions) {
+    public Item(String name, Double price, List<Promotions> promotions) {
         this.name = name;
         this.price = price;
         this.promotions = promotions;
@@ -46,7 +46,7 @@ public class Item {
         return name;
     }
 
-    public int getPrice() {
+    public Double getPrice() {
         return price;
     }
 
@@ -62,7 +62,7 @@ public class Item {
         this.name = name;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

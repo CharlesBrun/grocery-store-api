@@ -1,15 +1,17 @@
 package interview_mock_api.model;
 
+import interview_mock_api.enums.PromotionType;
+
 public class Promotions {
     private String id;
-    private String type;
-    private int price;
-    private int amount;
+    private PromotionType type;
+    private Double price;
+    private Double amount;
     private int required_qty;
     private int free_qty;
 
     public Promotions() {}
-    public Promotions(String id, String type, int price, int amount, int required_qty, int free_qty) {
+    public Promotions(String id, PromotionType type, Double price, Double amount, int required_qty, int free_qty) {
         this.id = id;
         this.type = type;
         this.price = price;
@@ -46,21 +48,21 @@ public class Promotions {
         this.required_qty = required_qty;
     }
 
-    public int getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
 
-    public int getPrice() {
+    public Double getPrice() {
         return price;
     }
 
 
-    public void setPrice(int price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -68,7 +70,7 @@ public class Promotions {
         return id;
     }
 
-    public String getType() {
+    public PromotionType getType() {
         return type;
     }
 
@@ -76,7 +78,7 @@ public class Promotions {
         this.id = id;
     }
 
-    public void setType(String type) {
+    public void setType(PromotionType type) {
         this.type = type;
     }
 

@@ -18,14 +18,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    private Contact contato() {
+    private Contact Contact() {
 		return new Contact(
 				"Charles Viegas",
 				"https://github.com/CharlesBrun", 
 				"charlesbrviegas@gmail.com");
 	}
 
-    private ApiInfoBuilder informacoesApi() {
+    private ApiInfoBuilder apiInfo() {
 		 
 		ApiInfoBuilder apiInfoBuilder = new ApiInfoBuilder();
  
@@ -33,14 +33,14 @@ public class SwaggerConfig {
 		apiInfoBuilder.description("Springboot REST API");
 		apiInfoBuilder.version("1.0");
 		apiInfoBuilder.termsOfServiceUrl("Termo de uso: Open Source");
-		apiInfoBuilder.contact(this.contato());
+		apiInfoBuilder.contact(this.Contact());
  
 		return apiInfoBuilder;
  
 	}
 
     @Bean
-    public Docket detalheApi() {
+    public Docket apiDetail() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2);
     
         docket
@@ -48,7 +48,7 @@ public class SwaggerConfig {
         .apis(RequestHandlerSelectors.basePackage("interview_mock_api.controller"))
         .paths(PathSelectors.any())
         .build()
-        .apiInfo(this.informacoesApi().build())
+        .apiInfo(this.apiInfo().build())
         .consumes(new HashSet<String>(Arrays.asList("application/json")))
         .produces(new HashSet<String>(Arrays.asList("application/json")));
         

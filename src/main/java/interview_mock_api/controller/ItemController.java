@@ -1,6 +1,7 @@
 package interview_mock_api.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,8 +32,14 @@ public class ItemController {
         return service.getItem(id);
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addItem")
     public ResponseEntity<Item> addItem(@RequestBody Item item) {
         return ResponseEntity.ok(service.addItem(item));
     }
+
+    @PostMapping("/savedPrice")
+    public ResponseEntity<Map<String, String>> getSavedPrice(@RequestBody List<Item> itens) {
+        return ResponseEntity.ok(service.calculateSavings(itens));
+    }
+    
 }
