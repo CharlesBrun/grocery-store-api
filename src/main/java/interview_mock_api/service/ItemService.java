@@ -50,6 +50,26 @@ public class ItemService {
         return restTemplate.getForObject(url, Item.class);
     }
 
+    public Item updateItem(Item item) {
+        String url = "http://localhost:8081/products/" + item.getId();
+        ResponseEntity<Item> responseEntity = restTemplate.getForEntity(url, Item.class);
+        Item itemFromServer = responseEntity.getBody();
+
+        if (itemFromServer != null) {
+            itemFromServer.setName(item.getName());
+            itemFromServer.setPrice(item.getPrice());
+            itemFromServer.setPromotions(item.getPromotions());
+        }
+
+        return itemFromServer;
+    }
+
+    public Map<String, String> deleteById(String id){
+        Map<String, String> deleteResult = new HashMap<>();
+        deleteResult.put("Result", String.format("DELETE/id - %s", id));
+        return deleteResult;
+    }
+
     public Map<String, String> calculateSavings(List<Item> items) {
         Double totalDiscountedPrice = 0.0;
         Double totalPrice = 0.0;
