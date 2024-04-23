@@ -12,10 +12,12 @@ This project provides a Grocery Store application that utilizes a Wiremock API f
 
    ```bash
    cd wiremock
+   ./start.sh
 
 2. **Run the project:**
 
    ```bash
+   cd ..
    ./mvnw spring-boot:run
 
 3. **Access Swagger UI:**
